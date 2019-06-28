@@ -1,0 +1,29 @@
+<p-toast></p-toast>
+
+<div class="container">
+
+  <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <h1>Novo Médico</h1>
+      </div>
+      <div class="ui-g-12 ui-md-9 ui-fluid">
+        <label>nome</label>
+        <input pInputText type="text" name="nome" [(ngModel)]="medico.nome" #nome="ngModel" required minlength="10">
+        <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
+        <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 10 caracteres</div>
+      </div>
+      <div class="ui-g-12 ui-md-9 ui-fluid">
+        <label>especialidade</label>
+        <input pInputText type="text" name="especialidade" [(ngModel)]="medico.especialidade" #nome="ngModel" required minlength="4">
+        <div *ngIf="nome.hasError('required') && nome.touched">Informe uma especialidade</div>
+        <div *ngIf="nome.hasError('minlength')">A especialidade deve ter no mínimo 4 caracteres</div>
+      </div>
+      <div class="ui-g-12">
+        <button pButton type="submit" label="Salvar" [disabled]="f.invalid" class=" boxButton"></button>
+      </div>
+
+    </div>
+  </form>
+
+</div>
