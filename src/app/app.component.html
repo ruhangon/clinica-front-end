@@ -1,11 +1,14 @@
 <!--
 <app-medicos-cadastro></app-medicos-cadastro>
+<app-medicamentos-cadastro></app-medicamentos-cadastro>
 -->
 
 <p-sidebar [(visible)]="sideBar">
   <div class="ui-g">
     <div class="ui-g-12 ui-fluid">
-      <h1 class="boxButton">Menu</h1><button type="button" (click)="sideBar = false" pButton label="medicos" routerLink="/medicos" class="boxButton"></button>
+      <h1 class="boxButton">Menu</h1>
+      <button type="button" (click)="sideBar = false" pButton label="medicos" routerLink="/medicos" class="boxButton"></button>
+      <button type="button" (click)="sideBar = false" pButton label="medicamentos" routerLink="/medicamentos" class="boxButton"></button>
     </div>
   </div>
 </p-sidebar>
