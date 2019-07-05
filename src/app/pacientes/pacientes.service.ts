@@ -44,5 +44,13 @@ export class PacientesService {
     .toPromise();
   }
 
+  listarMedicos(): Promise<any> {
+    return this.http.get<any>('http://localhost:8081/medicos').toPromise();
+  }
+
+  listarMedicamentos(): Promise<any> {
+    return this.http.get<any>('http://localhost:8081/medicamentos').toPromise();
+  }
+  
   
 }

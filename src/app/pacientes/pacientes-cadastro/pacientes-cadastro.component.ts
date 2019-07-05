@@ -24,6 +24,8 @@ export class PacientesCadastroComponent implements OnInit {
 
   
   ngOnInit() {
+    this.pesquisarMedicos();
+    this.pesquisarMedicamentos();
     const codigoPaciente = this.rota.snapshot.params['id'];
     if(codigoPaciente){
       this.carregarPaciente(codigoPaciente);
@@ -66,5 +68,21 @@ export class PacientesCadastroComponent implements OnInit {
     return Boolean(this.paciente.id);
   }
 
+  pesquisarMedicos(){
+    this.service.listarMedicos()
+    .then((dados)=>{
+      this.medicos=dados
+      .map(m => ({ label: m.nome, value: m.id }));
+    });
+  }
+
+  pesquisarMedicamentos(){
+    this.service.listarMedicamentos()
+    .then((dados)=>{
+      this.medicamentos=dados
+      .map(m => ({ label: m.nome, value: m.id }));
+    });
+  }
+  
   
 }
